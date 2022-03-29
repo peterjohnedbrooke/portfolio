@@ -7,7 +7,7 @@ const ExploreButton = (props) => {
   return (
     <>
       <button className={styles.exploreButton}>
-           <a href={link}>Explore</a>
+           <a href={link}>Explore!</a>
       </button>
     </>
   )
