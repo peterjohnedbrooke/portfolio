@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    // padding-top: 20vh;
+
+}
+
+.projectsWrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    // gap: 2rem;
+}
+
+@media (max-width:960px) {
+    .projectsWrapper {
+        grid-template-columns: 100%;
+    }
+}

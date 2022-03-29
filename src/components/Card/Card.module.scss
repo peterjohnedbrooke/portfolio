@@ -1,0 +1,78 @@
+.main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-left: 20px solid #00ffcd;
+
+
+    @keyframes fadeIn {
+        0% {
+            transform: translatey(-100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .container {
+        // padding-top: 100px;
+        display: grid;
+        // grid-template-columns: 75% 25%;
+        grid-auto-flow: column;
+        gap: 8em;
+        // height: 65vh;
+        width: min(90%, 85rem);
+        animation: 1s ease-in-out 0s 1 fadeIn;
+        z-index: 1;
+        // border: 2px #444 solid;
+
+        p {
+            font-family: 'IBM Plex Mono', monospace !important;
+            color: black;
+            font-weight: bolder;
+            font-size: 30px;
+            opacity: 0.8;
+            padding: 20px;
+
+        }
+
+    }
+
+    .textBox {
+        padding: 20px;
+
+        h2 {
+            color: black;
+            // -webkit-text-stroke: 0.1px black;
+            font-size: 50px;
+            opacity: 0.8;
+            transition: opacity 1s ease-out;
+            // letter-spacing: 0.3rem;
+            // -webkit-transform: scale(1.5, 1.5);
+        }
+    }
+
+    .sideNavBackground {
+        position: fixed;
+        bottom: 0%;
+        height: 15vh;
+        width: 100vw;
+        background-color: #00ffcd;
+    }
+
+
+}
+
+@media (max-width:960px) {
+    .main {
+        .container {
+            gap: 2em;
+            grid-auto-flow: row;
+        }
+
+    }
+}

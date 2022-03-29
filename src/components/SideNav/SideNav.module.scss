@@ -1,0 +1,44 @@
+ .landingTextContainer {
+     position: fixed;
+     transition: all 2s ease-in-out;
+     // width: 300px;
+     left: 5%;
+     bottom: 5%;
+     display: flex;
+     flex-direction: column;
+     padding-bottom: 20px;
+ }
+
+
+ .icons {
+     font-size: 10px;
+     display: flex;
+     flex-direction: row;
+ }
+
+ .introGrid {
+     padding-top: 5px;
+     display: grid;
+     column-gap: 4vw;
+     row-gap: 5px;
+     grid-template-columns: auto auto auto;
+     font-size: 1vw;
+ }
+
+ li {
+     font-family: 'IBM Plex Mono', monospace !important;
+     text-decoration: none;
+     list-style: none;
+     color: white;
+     opacity: 1;
+     letter-spacing: 0.1rem;
+ }
+
+ .miniLink {
+     font-weight: 900;
+     transition: transform 0.2s;
+ }
+
+ .miniLink:hover {
+     transform: perspective(120px) rotateY(35deg);
+ }

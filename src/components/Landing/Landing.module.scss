@@ -1,0 +1,78 @@
+.landingContainerMain {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fa0d5e;
+    border-left: 10px solid white;
+
+
+    .landingTextContainer {
+        position: fixed;
+        transition: all 2s ease-in-out;
+        // width: 300px;
+        left: 5%;
+        bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+
+    .tags {
+        font-family: 'IBM Plex Mono', monospace;
+        opacity: 0.5;
+        font-size: calc(10% + 1vw);
+    }
+
+    .icons {
+        font-size: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .socialsContainer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landingContainerRight {
+        position: relative;
+        height: 100vh;
+        width: 70%;
+        // background-image: url("../../cosmic2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        // filter: opacity(0.6);
+    }
+
+    .introGrid {
+        padding-top: 5px;
+        display: grid;
+        column-gap: 4vw;
+        row-gap: 5px;
+        grid-template-columns: auto auto auto;
+        font-size: 1vw;
+    }
+
+    li {
+        font-family: 'IBM Plex Mono', monospace !important;
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        opacity: 0.8;
+        letter-spacing: 0.1rem;
+    }
+
+
+    .miniLink {
+        font-weight: 900;
+        transition: transform 0.2s;
+    }
+
+    .miniLink:hover {
+        transform: perspective(120px) rotateY(35deg);
+    }
+
+
+
+}

@@ -1,0 +1,21 @@
+.exploreButton {
+    width: 18vw;
+    // height: 34px;
+    padding-top: 30px;
+    background-color: #00ffcd;
+    border: none;
+    border-radius: 10px;
+    font-size: 5vw;
+    cursor: pointer;
+
+    a {
+        font-weight: bold;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}

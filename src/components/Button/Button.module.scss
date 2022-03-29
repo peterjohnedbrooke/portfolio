@@ -1,0 +1,33 @@
+.circleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    background-color: #00ffcd;
+    border-radius: 50%;
+}
+
+.arrow {
+    position: relative;
+    border: 2px solid white;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 12px;
+    margin-right: 6px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+@media (max-width:960px) {
+    .circleButton {
+        height: 40px;
+        width: 40px;
+    }
+
+    .arrow {
+        padding: 6px;
+    }
+
+}
