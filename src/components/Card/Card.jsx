@@ -12,7 +12,7 @@ const Card = (props) => {
         <div className={styles.container}>
         <div className={styles.textBox}>
             <h2>{title}</h2>
-            <ExploreButton link={link} linkPoke={linkPoke}/>
+            <ExploreButton link={link}/>
           </div>
           <div>
             <p>{paragraph}</p> 
