@@ -21,6 +21,7 @@ export const Projects = (props) => {
           <Card title="BrewDog API" handleLayout={handleLayout} />
           <Card title="KnowWaste" handleLayout={handleLayout} />
           <Card title="Project #1" handleLayout={handleLayout}  />
+          
         </div>
         <Outlet/>
       </div>
