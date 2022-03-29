@@ -7,8 +7,8 @@ const ExploreButton = (props) => {
   return (
     <>
       <button className={styles.exploreButton}>
-          {/* {linkPoke} */}
-           
+          {linkPoke}
+           Explore
       </button>
     </>
   )
