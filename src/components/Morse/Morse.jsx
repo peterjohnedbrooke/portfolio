@@ -5,7 +5,7 @@ import Card from '../Card/Card'
 const Morse = () => {
   const link = "https://peteredbrooke.github.io/morse-translator/";
   const title = "morse translator"
-  const paragraph= "This was an early poject which involved translating engligh to more code using Javascript" 
+  const paragraph= "This was an early project which involved translating english to morse code using Javascript" 
   return (
     <>
       <Card link={link} title={title} paragraph={paragraph}/>

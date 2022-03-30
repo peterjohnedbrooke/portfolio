@@ -17,13 +17,13 @@ const Card = (props) => {
           <div>
             <p>{paragraph}</p> 
           </div>
-          { handleLayout ? 
+          {/* { handleLayout ? 
           ""
           :
           <div>
-            <Button/>
+            <Button link={link}/>
           </div> 
-          }
+          } */}
         </div>
         <div className={styles.sideNavBackground}>
           <SideNav ></SideNav>

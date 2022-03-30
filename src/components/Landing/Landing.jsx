@@ -7,11 +7,13 @@ import SideNav from '../SideNav/SideNav';
 
 
 
-const Landing = () => {
+export const Landing = () => {
   return (
+    <>
     <div className={styles.landingContainerMain}>
             <SideNav></SideNav> 
     </div>
+    </>
   )
 }
 

@@ -15,13 +15,12 @@ export const Projects = (props) => {
     <>
       <div className={styles.container} >
         <div className={styles.projectsWrapper}>
-          <Card title="Poke API" handleLayout={handleLayout} linkPoke={linkPoke} />
+          <Card title="Poke api" handleLayout={handleLayout} linkPoke={linkPoke} />
           <Card  title="Js Calculator" handleLayout={handleLayout}  />
           <Card title="Morse Translator" handleLayout={handleLayout} />
-          <Card title="BrewDog API" handleLayout={handleLayout} />
+          <Card title="BrewDog api" handleLayout={handleLayout} />
           <Card title="KnowWaste" handleLayout={handleLayout} />
           <Card title="Project #1" handleLayout={handleLayout}  />
-          
         </div>
         <Outlet/>
       </div>

@@ -145,13 +145,13 @@ const NavBar = () => {
           
           <ul className={click ? `${styles.rightSideList}` : `${styles.rightSideListHidden}`}>
             <li>
-              <Link to="/" onMouseEnter={handleHoverOne} onClick={handleExitHome} >home.</Link>
+              <Link to="/portfolio" onMouseEnter={handleHoverOne} onClick={handleExitHome} >home.</Link>
             </li>
             <li>
-                <Link to="/projects" onMouseEnter={handleHoverTwo} onClick={handleExit}>recent.</Link>
+                <Link to="portfolio/projects" onMouseEnter={handleHoverTwo} onClick={handleExit}>recent.</Link>
             </li>
             <li>
-              <Link to="/about" onMouseEnter={handleHoverThree} onClick={handleExit}>about me.</Link>
+              <Link to="portfolio/about" onMouseEnter={handleHoverThree} onClick={handleExit}>about me.</Link>
             </li>
             /
           </ul>
@@ -160,19 +160,19 @@ const NavBar = () => {
              <div className={ hoverTwo ? `${styles.rightMenuPopOut}` : `${styles.rightMenuPopOutHidden}`}>                                 
                     <ul className={hoverTwo ? `${styles.popOutListActive}` : `${styles.popOutListHidden}`} >
                         <li className={styles.popOutList}>
-                          <Link  onClick={handleExit} to="/pokeapi" className={styles.popOutLink}>poke api.</Link>
+                          <Link  onClick={handleExit} to="portfolio/pokeapi" className={styles.popOutLink}>poke api.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
+                          <Link onClick={handleExit} to="portfolio/calculator" className={styles.popOutLink}>js calculator.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
+                          <Link onClick={handleExit} to="portfolio/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
+                          <Link onClick={handleExit} to="portfolio/brewdog" className={styles.popOutLink}>brewdog api.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/morse" className={styles.popOutLink}>morse translator.</Link>
+                          <Link onClick={handleExit} to="portfolio/morse" className={styles.popOutLink}>morse translator.</Link>
                         </li>
                         {/* <li className={styles.popOutList}>
                           <a href="" className={styles.popOutLink}>Memory Game</a>
