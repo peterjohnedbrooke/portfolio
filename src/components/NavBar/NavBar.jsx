@@ -1,14 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./NavBar.module.scss";
 import Hamburger from 'hamburger-react';
 import { Outlet, Link } from "react-router-dom";
 import Logo from '../Logo';
+import SideNav from '../SideNav/SideNav';
 
-const NavBar = () => {
-
+const NavBar = (props) => {
   const [click, setClick] = useState(false);
   const[clickLogo, setClickLogo] = useState(false);
   const [changePage, setChangePage] = useState(false);
+
+  useEffect(() => {
+    setClick(JSON.parse(window.localStorage.getItem('click')));
+    setClickLogo(JSON.parse(window.localStorage.getItem('clickLogo')));
+    setChangePage(JSON.parse(window.localStorage.getItem('changePage')));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("click", click)
+    window.localStorage.setItem("clickLogo", clickLogo)
+    window.localStorage.setItem("changePage", changePage)
+  }, [click], [clickLogo], [changePage])
+
+  const handlePageChange = () => {
+    setChangePage(true)
+    setClickLogo(true)
+  }
 
   const handleLogo = () => {
     setClickLogo(!clickLogo)
@@ -145,13 +162,13 @@ const NavBar = () => {
           
           <ul className={click ? `${styles.rightSideList}` : `${styles.rightSideListHidden}`}>
             <li>
-              <Link to="/portfolio" onMouseEnter={handleHoverOne} onClick={handleExitHome} >home.</Link>
+              <Link to="/" onMouseEnter={handleHoverOne} onClick={handleExitHome} >home.</Link>
             </li>
             <li>
-                <Link to="portfolio/projects" onMouseEnter={handleHoverTwo} onClick={handleExit}>recent.</Link>
+                <Link to="/projects" onMouseEnter={handleHoverTwo} onClick={handleExit}>recent.</Link>
             </li>
             <li>
-              <Link to="portfolio/about" onMouseEnter={handleHoverThree} onClick={handleExit}>about me.</Link>
+              <Link to="/about" onMouseEnter={handleHoverThree} onClick={handleExit}>about.</Link>
             </li>
             /
           </ul>
@@ -160,19 +177,19 @@ const NavBar = () => {
              <div className={ hoverTwo ? `${styles.rightMenuPopOut}` : `${styles.rightMenuPopOutHidden}`}>                                 
                     <ul className={hoverTwo ? `${styles.popOutListActive}` : `${styles.popOutListHidden}`} >
                         <li className={styles.popOutList}>
-                          <Link  onClick={handleExit} to="portfolio/pokeapi" className={styles.popOutLink}>poke api.</Link>
+                          <Link  onClick={handleExit} to="/pokeapi" className={styles.popOutLink}>poke api.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="portfolio/calculator" className={styles.popOutLink}>js calculator.</Link>
+                          <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="portfolio/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
+                          <Link onClick={handleExit} to="/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="portfolio/brewdog" className={styles.popOutLink}>brewdog api.</Link>
+                          <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="portfolio/morse" className={styles.popOutLink}>morse translator.</Link>
+                          <Link onClick={handleExit} to="/morse" className={styles.popOutLink}>morse translator.</Link>
                         </li>
                         {/* <li className={styles.popOutList}>
                           <a href="" className={styles.popOutLink}>Memory Game</a>
@@ -184,7 +201,8 @@ const NavBar = () => {
                 
               </div>
           }  
-        </div> 
+        </div>
+        <SideNav handlePageChange={handlePageChange} changePage={changePage}></SideNav>
       </div>
       <Outlet/>
     </div>

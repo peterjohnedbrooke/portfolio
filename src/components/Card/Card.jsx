@@ -25,9 +25,9 @@ const Card = (props) => {
           </div> 
           } */}
         </div>
-        <div className={styles.sideNavBackground}>
+        {/* <div className={styles.sideNavBackground}>
           <SideNav ></SideNav>
-        </div>
+        </div> */}
         {/* <div className={styles.mainSecond}></div> */}
     </div>
   )

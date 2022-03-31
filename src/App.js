@@ -14,20 +14,20 @@ import Morse from "./components/Morse/Morse";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <>
         <Routes>
-          <Route path="/portfolio" element={<NavBar />}>
+          <Route path="/" element={<NavBar />}>
             <Route index element={<Landing />} />
-            <Route path="portfolio/projects" element={<Projects />} />
-            <Route path="portfolio/pokeapi" element={<Poke />} />
-            <Route path="portfolio/calculator" element={<Calculator />} />
-            <Route path="portfolio/brewdog" element={<Brewdog />} />
-            <Route path="portfolio/morse" element={<Morse />} />
-            <Route path="portfolio/knowwaste" element={<KnowWaste />} />
-            <Route path="portfolio/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/pokeapi" element={<Poke />} />
+            <Route path="/calculator" element={<Calculator />} />
+            <Route path="/brewdog" element={<Brewdog />} />
+            <Route path="/morse" element={<Morse />} />
+            <Route path="/knowwaste" element={<KnowWaste />} />
+            <Route path="/about" element={<About />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </>
     </>
   );
 };

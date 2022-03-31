@@ -11,7 +11,7 @@ export const Landing = () => {
   return (
     <>
     <div className={styles.landingContainerMain}>
-            <SideNav></SideNav> 
+            {/* <SideNav></SideNav>  */}
     </div>
     </>
   )

@@ -348,6 +348,7 @@
         height: 100%;
         transition: all 0.8s ease-in-out;
     }
+
 }
 
 @media (max-width: 960px) {
@@ -357,30 +358,46 @@
         .sideNavRightActive {
             position: fixed;
             top: 0;
-            left: 0;
+            left: 40%;
             height: 100%;
-            width: 100%;
+            width: 60%;
 
             a {
                 font-size: 50px;
+                padding-left: 10px;
             }
         }
 
         .sideNavRightHidden {
             top: 0;
-            left: 0;
+            left: 40%;
             width: 100%;
 
         }
 
         .rightMenuPopOut {
-            display: none;
+            // display: none;
         }
 
 
 
-        .sideNavLeftActive {
-            display: none;
+        .sideNavLeftActive,
+        .rightMenuPopOut {
+            left: 0%;
+            width: 40%;
+            font-size: 30px;
+            // display: none;
+        }
+
+        .popOutListActive {
+            a {
+                font-size: 10px;
+            }
+        }
+
+
+        .rightMenuPopOutHidden {
+            left: 40%;
         }
     }
 }
