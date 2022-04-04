@@ -3,12 +3,15 @@ import styles from "./Card.module.scss";
 import ExploreButton from '../ExploreButton/ExploreButton';
 import Button from '../Button';
 import SideNav from '../SideNav/SideNav';
+import Logo from '../Logo';
 
 const Card = (props) => {
   const {link, title, paragraph, handleLayout, linkPoke} = props;
 
   return (
+    <>
     <div className={styles.main}>
+      <Logo></Logo>
         <div className={styles.container}>
         <div className={styles.textBox}>
             <h2>{title}</h2>
@@ -17,19 +20,12 @@ const Card = (props) => {
           <div>
             <p>{paragraph}</p> 
           </div>
-          {/* { handleLayout ? 
-          ""
-          :
-          <div>
-            <Button link={link}/>
-          </div> 
-          } */}
         </div>
-        {/* <div className={styles.sideNavBackground}>
-          <SideNav ></SideNav>
-        </div> */}
-        {/* <div className={styles.mainSecond}></div> */}
     </div>
+    <div className={styles.sideNavBackgroundActive}>
+      <SideNav></SideNav>
+    </div>
+    </>
   )
 }
 

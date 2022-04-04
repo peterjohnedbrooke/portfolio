@@ -3,6 +3,7 @@ import styles from "./Projects.module.scss"
 import Card from "../Card/Card";
 import {Outlet, Link} from "react-router-dom";
 import SideNav from '../SideNav/SideNav';
+import Logo from '../Logo';
 // import { Row, Col, Container, Card } from 'react-bootstrap';
 
 export const Projects = (props) => {
@@ -14,6 +15,7 @@ export const Projects = (props) => {
 
   return (
     <>
+    <Logo></Logo>
       <div className={styles.wrapper} >
         <div className={styles.projectsContainer}>
           <ul>
@@ -42,6 +44,9 @@ export const Projects = (props) => {
         {/* <div className={styles.sideNavBackground}>
           <SideNav ></SideNav>
         </div> */}
+      </div>
+      <div className={styles.sideNavBackgroundActive}>
+      <SideNav></SideNav>
       </div>
       <Outlet/>
     </>

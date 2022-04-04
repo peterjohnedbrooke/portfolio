@@ -1,10 +1,21 @@
+ .navBackground {
+     position: absolute;
+     top: 40px;
+     right: 42px;
+     height: 50px;
+     width: 50px;
+     background-color: #7cb3f5;
+     z-index: 1;
+ }
+ 
  .landingTextContainer {
      position: fixed;
      transition: all 2s ease-in-out;
      // width: 300px;
      left: 5%;
-     bottom: 5%;
+    //  bottom: 5%;
      display: flex;
+     justify-content: center;
      flex-direction: column;
      padding-bottom: 20px;
  }
@@ -17,8 +28,10 @@
  }
 
  .introGrid {
-     padding-top: 5px;
+     padding-top: 10px;
      display: grid;
+     align-items: center;
+     justify-content: center;
      column-gap: 4vw;
      row-gap: 5px;
      grid-template-columns: auto auto auto;
@@ -57,7 +70,7 @@
      bottom: 0%;
      height: 15vh;
      width: 100vw;
-     z-index: -1;
+    //  z-index: -1;
      //         background-color: #7cb3f5;
      // background-image: linear-gradient(62deg, #7cb3f5 0%, #a055fc 100%);
  }
@@ -68,6 +81,9 @@
 
  .sideNavBackgroundActive {
      background-color: #7cb3f5;
+ }
+ .navBakground {
+     position: fixed;
  }
 
  @media (max-width:960px) {

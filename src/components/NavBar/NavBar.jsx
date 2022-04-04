@@ -138,21 +138,14 @@ const NavBar = (props) => {
       
       <div className={ changePage ? `${styles.navBarContainer}` : `${styles.navBarContainerHome}`}>
          
-        <div className={clickLogo === true ? `${styles.logoMove}` : `${styles.logoStatic}`}>
+        {/* <div className={clickLogo === true ? `${styles.logoMove}` : `${styles.logoStatic}`}>
           <h2 className={styles.introText}>pje.</h2>
           <h2 className={styles.introText2}>pje.</h2>
-        </div>
+        </div> */}
         <div className={styles.navBarContainerRight}>
           <div className={changePage ? `${styles.burgerIconPage}` : `${styles.burgerIcon}`} onClick={handleClick}>
             <Hamburger className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
           </div>
-          
-          {/* <div className={styles.arrowContainer}>
-            <div className={styles.arrowUp}></div>
-            <div className={styles.arrowUpTwo}></div>
-            <div className={styles.arrowUpThree}></div>
-          </div> */}
-          
         </div>
         <div onMouseEnter={handleSideNavOpen} className={click ? `${styles.sideNavLeftActive}` : `${styles.sideNavLeftHidden}`}>
           <div className={ hoverOne ? `${styles.hoverOneMenu}` 
@@ -205,7 +198,6 @@ const NavBar = (props) => {
               </div>
           }  
         </div>
-        <SideNav handlePageChange={handlePageChange} changePage={changePage}></SideNav>
       </div>
       <Outlet/>
     </div>

@@ -8,14 +8,13 @@ const SideNav = (props) => {
     //   setChangePage(true)
     // } 
 
-    window.onreset = () => {
-        localStorage.removeItem("changePage")
-      }
     const {handlePageChange, changePage} = props;
     
 
   return (
-        <div className={ changePage ? `${styles.sideNavBackgroundActive}` : `${styles.sideNavBackground}` }>
+      <>
+        {/* <div className={styles.navBackground}></div> */}
+        <div className={styles.sideNavBackground}>
             <div className={styles.landingTextContainer}>
                 {/* <Logo/> */}
                 <div>
@@ -33,7 +32,8 @@ const SideNav = (props) => {
                     </ul>
                 </div>
             </div>
-        </div> 
+        </div>
+      </>   
   )
 }
 

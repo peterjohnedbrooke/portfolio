@@ -1,28 +1,62 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 5%;
+    }
+    100% {
+        top: 0%;
+        left: 5%;
+        opacity: 1;
+    }
+}
+
+
+.logoMove {
+    animation: fadeIn ease-in-out 2s;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0%;
+    left: 5%;
+    // transition: all 2s ease-in-out;
+    // opacity: 0;
+    z-index: 1;
+    color: black;
+}
+
+.logoStatic {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    transition: all 2s ease-in-out;
+    color: white;
+}
+
 .introText,
 .introText2 {
-    position: fixed;
-    color: white;
-    font-size: 140px;
-    // font-size: calc(100% + 2vw);
+    // color: white;
+    font-size: 100px;
     letter-spacing: 0.1rem;
     font-weight: 800;
     transition: 2s;
     opacity: 0.8;
-    padding-bottom: 80px;
     transition: transform 1s;
+    z-index: 1;
 }
 
 .introText {
-    top: 50%;
-    left: 5%;
+    position: relative;
 }
 
 .introText2 {
-    top: 54%;
-    left: 7%;
+    position: relative;
+    top: -130px;
+    left: 15%;
     opacity: 0.5;
 }
 
 .introText2:hover {
+    z-index: 999;
     transform: translate(20px, 20px);
 }
