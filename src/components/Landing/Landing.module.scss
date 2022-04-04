@@ -1,78 +1,128 @@
-.landingContainerMain {
+.landingWrapper {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: #fa0d5e;
     border-left: 10px solid white;
 
-
-    .landingTextContainer {
+    .landingList {
         position: fixed;
-        transition: all 2s ease-in-out;
-        // width: 300px;
-        left: 5%;
-        bottom: 5%;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 20px;
+        top: 10%;
+        left: 55%;
+        // color: #4392F1;
+        opacity: 0.7;
+        font-size: 70vh;
     }
 
-
-    .tags {
-        font-family: 'IBM Plex Mono', monospace;
-        opacity: 0.5;
-        font-size: calc(10% + 1vw);
-    }
-
-    .icons {
-        font-size: 10px;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .socialsContainer {
+    .landingList span {
+        color: #7cb3f5;
+        animation: topToBottom 12.5s linear infinite 0s;
+        -ms-animation: topToBottom 12.5s linear infinite 0s;
+        -webkit-animation: topToBottom 12.5s linear infinite 0s;
+        opacity: 0;
+        overflow: hidden;
         position: absolute;
-        display: flex;
-        flex-direction: column;
     }
 
-    .landingContainerRight {
-        position: relative;
-        height: 100vh;
-        width: 70%;
-        // background-image: url("../../cosmic2.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        // filter: opacity(0.6);
+    .landingList span:nth-child(2) {
+        animation-delay: 2.5s;
+        -ms-animation-delay: 2.5s;
+        -webkit-animation-delay: 2.5s;
     }
 
-    .introGrid {
-        padding-top: 5px;
-        display: grid;
-        column-gap: 4vw;
-        row-gap: 5px;
-        grid-template-columns: auto auto auto;
-        font-size: 1vw;
+    .landingList span:nth-child(3) {
+        animation-delay: 5s;
+        -ms-animation-delay: 5s;
+        -webkit-animation-delay: 5s;
     }
 
-    li {
-        font-family: 'IBM Plex Mono', monospace !important;
-        text-decoration: none;
-        list-style: none;
-        color: white;
-        opacity: 0.8;
-        letter-spacing: 0.1rem;
+    .landingList span:nth-child(4) {
+        animation-delay: 7.5s;
+        -ms-animation-delay: 7.5s;
+        -webkit-animation-delay: 7.5s;
     }
 
-
-    .miniLink {
-        font-weight: 900;
-        transition: transform 0.2s;
+    .landingList span:nth-child(5) {
+        animation-delay: 10s;
+        -ms-animation-delay: 10s;
+        -webkit-animation-delay: 10s;
     }
 
-    .miniLink:hover {
-        transform: perspective(120px) rotateY(35deg);
+    @keyframes topToBottom {
+        0% {
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 0;
+            -moz-transform: translateY(-50px);
+        }
+
+        10% {
+            opacity: 1;
+            -moz-transform: translateY(0px);
+        }
+
+        25% {
+            opacity: 1;
+            -moz-transform: translateY(0px);
+        }
+
+        30% {
+            opacity: 0;
+            -moz-transform: translateY(50px);
+        }
+
+        80% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
     }
 
+    @keyframes topToBottom {
+        0% {
+            opacity: 0;
+        }
 
+        5% {
+            opacity: 0;
+            -webkit-transform: translateY(-50px);
+        }
 
+        10% {
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+        }
+
+        25% {
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+        }
+
+        30% {
+            opacity: 0;
+            -webkit-transform: translateY(50px);
+        }
+
+        80% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .landingWrapper {
+        .landingList {
+            position: fixed;
+            top: 0%;
+            left: 15%;
+            font-size: 70vh;
+        }
+    }
 }

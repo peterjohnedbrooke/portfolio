@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Landing from "./components/Landing";
@@ -10,8 +10,11 @@ import Calculator from "./components/Calculator/Calculator";
 import Brewdog from "./components/Brewdog/Brewdog";
 import KnowWaste from "./components/KnowWaste/KnowWaste";
 import Morse from "./components/Morse/Morse";
+import KnowWastePage from "./components/KnowWastePage";
 
 const App = () => {
+  // window add event listener, if projects component is visible then reset
+
   return (
     <>
       <>
@@ -25,6 +28,7 @@ const App = () => {
             <Route path="/morse" element={<Morse />} />
             <Route path="/knowwaste" element={<KnowWaste />} />
             <Route path="/about" element={<About />} />
+            <Route path="/knowwasteinfo" element={<KnowWastePage />} />
           </Route>
         </Routes>
       </>

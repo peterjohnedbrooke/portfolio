@@ -10,17 +10,27 @@ const NavBar = (props) => {
   const[clickLogo, setClickLogo] = useState(false);
   const [changePage, setChangePage] = useState(false);
 
-  useEffect(() => {
-    setClick(JSON.parse(window.localStorage.getItem('click')));
-    setClickLogo(JSON.parse(window.localStorage.getItem('clickLogo')));
-    setChangePage(JSON.parse(window.localStorage.getItem('changePage')));
-  }, []);
+  // window.onpopstate = () => {
+  //   // localStorage.removeItem("click", "clickLogo", "changePage")
+  //   setClick(false);
+  //   setClickLogo(false);
+  //   setChangePage(false)
+  // }
+  // window.onpopstate = () => {
+  //   setClickLogo(true)
+  // }
 
-  useEffect(() => {
-    window.localStorage.setItem("click", click)
-    window.localStorage.setItem("clickLogo", clickLogo)
-    window.localStorage.setItem("changePage", changePage)
-  }, [click], [clickLogo], [changePage])
+  // useEffect(() => {
+  //   setClick(JSON.parse(window.localStorage.getItem('click')));
+  //   setClickLogo(JSON.parse(window.localStorage.getItem('clickLogo')));
+  //   setChangePage(JSON.parse(window.localStorage.getItem('changePage')));
+  // }, []);
+
+  // useEffect(() => {
+  //   window.localStorage.setItem("click", click)
+  //   window.localStorage.setItem("clickLogo", clickLogo)
+  //   window.localStorage.setItem("changePage", changePage)
+  // }, [click], [clickLogo], [changePage])
 
   const handlePageChange = () => {
     setChangePage(true)
@@ -28,7 +38,7 @@ const NavBar = (props) => {
   }
 
   const handleLogo = () => {
-    setClickLogo(!clickLogo)
+    setClickLogo(true)
   }
 
   const handleClick = () => {
@@ -183,22 +193,15 @@ const NavBar = (props) => {
                           <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
-                        </li>
-                        <li className={styles.popOutList}>
                           <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
                         </li>
                         <li className={styles.popOutList}>
                           <Link onClick={handleExit} to="/morse" className={styles.popOutLink}>morse translator.</Link>
                         </li>
-                        {/* <li className={styles.popOutList}>
-                          <a href="" className={styles.popOutLink}>Memory Game</a>
-                        </li>
                         <li className={styles.popOutList}>
-                          <a href="" className={styles.popOutLink}>Rock, Paper, Scissors</a>
-                        </li> */}
-                    </ul>  
-                
+                          <Link onClick={handleExit} to="/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
+                        </li>
+                    </ul>   
               </div>
           }  
         </div>

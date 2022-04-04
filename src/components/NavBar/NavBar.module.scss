@@ -64,15 +64,6 @@
 
     }
 
-    .navBarContainer {
-        // border-bottom: 5px solid rgba(0, 0, 0, 0.5);
-    }
-
-    .navBarContainerHome {
-        // border-bottom: 5px solid rgb(255, 255, 255, 0.8);
-    }
-
-
     .logo {
         background-image: url("../../cosmic.png");
         background-size: contain;
@@ -188,7 +179,8 @@
         justify-content: center;
         align-items: center;
         padding-right: 10px;
-        border-left: #C4D7F2 3px solid;
+        border-left: 2.5px solid white;
+
 
         .rightNavBack {
             position: absolute;
@@ -213,7 +205,8 @@
         height: 0%;
         width: 25%;
         transition: all 1s ease-in-out;
-        border-left: 2.5px solid rgb(255, 255, 255, 0.8);
+        // border-left: 2.5px solid rgb(255, 255, 255, 0.8);
+        border-left: 2.5px solid white;
     }
 
     .rightSideList {
@@ -298,6 +291,7 @@
         object-fit: contain;
         background-color: #fa0d5e;
         transition: all 0.8s ease-in-out;
+        border-left: white solid 2px;
         padding: 5rem;
         z-index: 9999;
 
@@ -364,7 +358,6 @@
 
             a {
                 font-size: 50px;
-                padding-left: 10px;
             }
         }
 
@@ -375,9 +368,9 @@
 
         }
 
-        .rightMenuPopOut {
-            // display: none;
-        }
+        // .rightMenuPopOut {
+        //     // display: none;
+        // }
 
 
 

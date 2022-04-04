@@ -52,3 +52,6 @@ export default Projects;
 
 // change the navbar when in mobile mode to handleClick in different way 
 // make flippable cards for the projects page, one side with title, the other side with view button 
+// change design of morse translator 
+// add in moving div with images of whats been used 
+// add back arrow to pages 
