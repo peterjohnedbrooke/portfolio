@@ -3,6 +3,7 @@ import styles from "./KnowWaste.module.scss"
 import Card from '../Card/Card'
 import { Link, Outlet } from 'react-router-dom'
 import SideNav from '../SideNav/SideNav'
+import Logo from '../Logo'
 
 const KnowWaste = () => {
   const paragraph = "This was my first real world project for the Bristol based start-up company KnowWaste. The goal was to reduce food waste in University canteens by creating an application designed to order meals for students before meal-time. The website uses React, Javascript and deals with firebase on the database side. "
@@ -11,6 +12,7 @@ const KnowWaste = () => {
   return (
     <>
       <div className={styles.main}>
+        <Logo></Logo>
         <div className={styles.container}>
         <div className={styles.textBox}>
             <h2>Know waste</h2>

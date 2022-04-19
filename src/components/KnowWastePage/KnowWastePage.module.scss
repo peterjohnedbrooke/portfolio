@@ -5,3 +5,11 @@
     align-items: center;
     justify-content: center;
 }
+
+.sideNavBackgroundActive {
+    position: fixed;
+    bottom: 0%;
+    height: 15vh;
+    width: 100vw;
+    background-color: #7cb3f5;
+}

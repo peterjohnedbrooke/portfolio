@@ -53,13 +53,7 @@
         }
     }
 
-    .sideNavBackground {
-        position: fixed;
-        bottom: 0%;
-        height: 15vh;
-        width: 100vw;
-        background-color: #7cb3f5;
-    }
+    
 
     .exploreButton {
         width: 18vw;
@@ -83,6 +77,14 @@
             transform: scale(1.02);
         }
     }
+}
+
+.sideNavBackgroundActive {
+    position: fixed;
+    bottom: 0%;
+    height: 15vh;
+    width: 100vw;
+    background-color: #7cb3f5;
 }
 
 @media (max-width:960px) {
