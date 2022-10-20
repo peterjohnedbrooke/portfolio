@@ -32,14 +32,6 @@ export const Projects = (props) => {
               <Link to="/brewdog">View</Link>
             </li>
             <li>
-              knowWaste.       
-              <Link to="/knowwaste">View</Link>
-            </li>
-            <li>
-              morse translator.       
-              <Link to="/morse">View</Link>
-            </li>
-            <li>
               calculator.       
               <Link to="/calculator">View</Link>
             </li> 

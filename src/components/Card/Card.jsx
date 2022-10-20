@@ -13,13 +13,11 @@ const Card = (props) => {
     <div className={styles.main}>
       <Logo></Logo>
         <div className={styles.container}>
-        <div className={styles.textBox}>
+          <div className={styles.textBox}>
             <h2>{title}</h2>
             <ExploreButton link={link}/>
           </div>
-          <div>
-            <p>{paragraph}</p> 
-          </div>
+          <p>{paragraph}</p> 
         </div>
     </div>
     <div className={styles.sideNavBackgroundActive}>

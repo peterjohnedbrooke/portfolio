@@ -137,11 +137,6 @@ const NavBar = (props) => {
     <div className={styles.navBar}>
       
       <div className={ changePage ? `${styles.navBarContainer}` : `${styles.navBarContainerHome}`}>
-         
-        {/* <div className={clickLogo === true ? `${styles.logoMove}` : `${styles.logoStatic}`}>
-          <h2 className={styles.introText}>pje.</h2>
-          <h2 className={styles.introText2}>pje.</h2>
-        </div> */}
         <div className={styles.navBarContainerRight}>
           <div className={changePage ? `${styles.burgerIconPage}` : `${styles.burgerIcon}`} onClick={handleClick}>
             <Hamburger className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
@@ -153,12 +148,6 @@ const NavBar = (props) => {
           : hoverThree ? `${styles.hoverThreeMenu}` 
           : hoverFour ? `${styles.hoverFourMenu}` 
           : `${styles.hoverMenuHidden}`}>
-
-            {hoverOne && 
-              <div>
-                {/* <h2>poke api</h2> */}
-              </div>
-            }
           </div>
         </div>
         <div className={click ? `${styles.sideNavRightActive}` : `${styles.sideNavRightHidden}`}>
@@ -185,9 +174,9 @@ const NavBar = (props) => {
                         <li className={styles.popOutList}>
                           <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
                         </li>
-                        <li className={styles.popOutList}>
+                        {/* <li className={styles.popOutList}>
                           <Link  onClick={handleExit} to="/pokeapi" className={styles.popOutLink}>poke api.</Link>
-                        </li>
+                        </li> */}
                         <li className={styles.popOutList}>
                           <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
                         </li>
