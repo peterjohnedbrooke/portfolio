@@ -180,19 +180,16 @@ const NavBar = (props) => {
              <div className={ hoverTwo ? `${styles.rightMenuPopOut}` : `${styles.rightMenuPopOutHidden}`}>                                 
                     <ul className={hoverTwo ? `${styles.popOutListActive}` : `${styles.popOutListHidden}`} >
                         <li className={styles.popOutList}>
-                          <Link  onClick={handleExit} to="/pokeapi" className={styles.popOutLink}>poke api.</Link>
-                        </li>
-                        <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
+                          <Link  onClick={handleExit} to="/erbium" className={styles.popOutLink}>erbium records.</Link>
                         </li>
                         <li className={styles.popOutList}>
                           <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/morse" className={styles.popOutLink}>morse translator.</Link>
+                          <Link  onClick={handleExit} to="/pokeapi" className={styles.popOutLink}>poke api.</Link>
                         </li>
                         <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/knowwaste" className={styles.popOutLink}>knowwaste.</Link>
+                          <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
                         </li>
                     </ul>   
               </div>

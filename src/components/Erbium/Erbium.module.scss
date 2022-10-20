@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-left: 10px solid #7cb3f5;
+    border-left: 20px solid #00ffcd;
 
 
     @keyframes fadeIn {
@@ -19,18 +19,22 @@
     }
 
     .container {
+        // padding-top: 100px;
         display: grid;
+        // grid-template-columns: 75% 25%;
         grid-auto-flow: column;
         gap: 8em;
+        // height: 65vh;
         width: min(90%, 85rem);
         animation: 1s ease-in-out 0s 1 fadeIn;
         z-index: 1;
-
+        // border: 2px #444 solid;
 
         p {
             font-family: 'IBM Plex Mono', monospace !important;
             color: black;
-            font-size: 2vw;
+            font-weight: bolder;
+            font-size: 30px;
             opacity: 0.8;
             padding: 20px;
 
@@ -52,37 +56,50 @@
         }
     }
 
-}
+    .sideNavBackground {
+        position: fixed;
+        bottom: 0%;
+        height: 15vh;
+        width: 100vw;
+        background-color: #00ffcd;
+    }
 
-.sideNavBackground,
-.sideNavBackgroundActive {
-    position: fixed;
-    bottom: 0%;
-    height: 15vh;
-    width: 100vw;
-    //  z-index: -1;
-    //         background-color: #7cb3f5;
-    // background-image: linear-gradient(62deg, #7cb3f5 0%, #a055fc 100%);
-}
+    .mainSecond {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
 
-.sideNavBackground {
-    background-color: transparent;
-}
+    .exploreButton {
+        width: 18vw;
+        // height: 34px;
+        padding-top: 30px;
+        background-color: #00ffcd;
+        border-radius: 10px;
+        font-size: 5vw;
+        cursor: pointer;
 
-.sideNavBackgroundActive {
-    background-color: #7cb3f5;
+        a {
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
 }
 
 @media (max-width:960px) {
     .main {
         .container {
-            gap: 2em;
             grid-auto-flow: row;
-
-            p {
-                font-size: 15px;
-            }
         }
-
     }
 }

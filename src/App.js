@@ -11,6 +11,7 @@ import Brewdog from "./components/Brewdog/Brewdog";
 import KnowWaste from "./components/KnowWaste/KnowWaste";
 import Morse from "./components/Morse/Morse";
 import KnowWastePage from "./components/KnowWastePage";
+import Erbium from "./components/Erbium/Erbium";
 
 const App = () => {
   // window add event listener, if projects component is visible then reset
@@ -23,6 +24,7 @@ const App = () => {
             <Route index element={<Landing />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/pokeapi" element={<Poke />} />
+            <Route path="/erbium" element={<Erbium />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/brewdog" element={<Brewdog />} />
             <Route path="/morse" element={<Morse />} />
