@@ -20,6 +20,10 @@ export const Projects = (props) => {
         <div className={styles.projectsContainer}>
           <ul>
             <li>
+              erbium records.        
+              <Link to="/erbium">View</Link>
+            </li>
+            <li>
               poke api.        
               <Link to="/pokeapi">View</Link>
             </li>

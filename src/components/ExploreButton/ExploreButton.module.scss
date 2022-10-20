@@ -1,5 +1,4 @@
 .exploreButton {
-    width: 18vw;
     // height: 34px;
     padding-top: 30px;
     background-color: #7cb3f5;
@@ -7,6 +6,7 @@
     border-radius: 10px;
     font-size: 5vw;
     cursor: pointer;
+    width: fit-content;
 
     a {
         font-weight: bold;

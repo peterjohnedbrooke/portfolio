@@ -65,19 +65,6 @@
 
     }
 
-    .logo {
-        background-image: url("../../cosmic.png");
-        background-size: contain;
-        width: 100px;
-        height: 100px;
-        top: 20%;
-        left: 2%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
     .navBarContainerRight {
         // position: absolute;
         padding-right: 5vw;
@@ -110,7 +97,7 @@
         // border: 2px solid white;
         width: 100px;
     }
-    
+
 
     .sideNavLeftActive {
         position: fixed;
@@ -151,7 +138,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-image: url("../../cosmic2.png");
+            // background-image: url("../../cosmic2.png");
             height: 100%;
             width: 35%;
             background-size: cover;
