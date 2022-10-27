@@ -7,7 +7,7 @@ import SideNav from '../SideNav/SideNav';
 
 const NavBar = (props) => {
   const [click, setClick] = useState(false);
-  const[clickLogo, setClickLogo] = useState(false);
+  const [clickLogo, setClickLogo] = useState(false);
   const [changePage, setChangePage] = useState(false);
 
   // window.onpopstate = () => {
@@ -70,9 +70,9 @@ const NavBar = (props) => {
   }
 
   const [isOpen, setOpen] = useState(false);
-    const handleOpen = () => {
-        setOpen(!isOpen)
-    };
+  const handleOpen = () => {
+    setOpen(!isOpen)
+  };
 
   const [isSideNavOpen, setIsSideOpen] = useState(true);
   const handleSideNavOpen = () => {
@@ -80,12 +80,12 @@ const NavBar = (props) => {
       return
     } else {
       setIsSideOpen(!isSideNavOpen);
-    }     
-  }  
+    }
+  }
 
   const [hoverOne, setHoverOne] = useState(false);
   const handleHoverOne = () => {
-    if ( setHoverOne(true)) {
+    if (setHoverOne(true)) {
       return;
     } else {
       setHoverOne(true);
@@ -93,7 +93,7 @@ const NavBar = (props) => {
       setHoverThree(false);
       setHoverFour(false)
     }
-  }  
+  }
   const [hoverTwo, setHoverTwo] = useState(false);
   const handleHoverTwo = () => {
     if (setHoverTwo(true)) {
@@ -105,7 +105,7 @@ const NavBar = (props) => {
       setHoverFour(false);
       setIsSideOpen(true);
     }
-  }  
+  }
 
 
   const [hoverThree, setHoverThree] = useState(false);
@@ -117,9 +117,9 @@ const NavBar = (props) => {
       setHoverOne(false);
       setHoverTwo(false);
       setHoverFour(false);
-      
+
     }
-  }  
+  }
   const [hoverFour, setHoverFour] = useState(false);
   const handleHoverFour = () => {
     if (setHoverFour(true)) {
@@ -130,34 +130,34 @@ const NavBar = (props) => {
       setHoverTwo(false);
       setHoverThree(false);
     }
-  }  
+  }
 
   // when any linked besides home is clicked, change the navbar to a different class
   return (
     <div className={styles.navBar}>
-      
-      <div className={ changePage ? `${styles.navBarContainer}` : `${styles.navBarContainerHome}`}>
+
+      <div className={changePage ? `${styles.navBarContainer}` : `${styles.navBarContainerHome}`}>
         <div className={styles.navBarContainerRight}>
           <div className={changePage ? `${styles.burgerIconPage}` : `${styles.burgerIcon}`} onClick={handleClick}>
-            <Hamburger className={styles.burgerInner} toggled={isOpen} rounded toggle ={setOpen} />
+            <Hamburger className={styles.burgerInner} toggled={isOpen} rounded toggle={setOpen} />
           </div>
         </div>
         <div onMouseEnter={handleSideNavOpen} className={click ? `${styles.sideNavLeftActive}` : `${styles.sideNavLeftHidden}`}>
-          <div className={ hoverOne ? `${styles.hoverOneMenu}` 
-          : hoverTwo ? `${styles.hoverTwoMenu}` 
-          : hoverThree ? `${styles.hoverThreeMenu}` 
-          : hoverFour ? `${styles.hoverFourMenu}` 
-          : `${styles.hoverMenuHidden}`}>
+          <div className={hoverOne ? `${styles.hoverOneMenu}`
+            : hoverTwo ? `${styles.hoverTwoMenu}`
+              : hoverThree ? `${styles.hoverThreeMenu}`
+                : hoverFour ? `${styles.hoverFourMenu}`
+                  : `${styles.hoverMenuHidden}`}>
           </div>
         </div>
         <div className={click ? `${styles.sideNavRightActive}` : `${styles.sideNavRightHidden}`}>
-          
+
           <ul className={click ? `${styles.rightSideList}` : `${styles.rightSideListHidden}`}>
             <li>
               <Link to="/" onMouseEnter={handleHoverOne} onClick={handleExitHome} >home.</Link>
             </li>
             <li>
-                <Link to="/projects" onMouseEnter={handleHoverTwo} onClick={handleExit}>recent.</Link>
+              <Link to="/projects" onMouseEnter={handleHoverTwo} onClick={handleExit}>recent.</Link>
             </li>
             <li>
               <Link to="/about" onMouseEnter={handleHoverThree} onClick={handleExit}>about.</Link>
@@ -165,29 +165,32 @@ const NavBar = (props) => {
             /
           </ul>
           {
-              isSideNavOpen && 
-             <div className={ hoverTwo ? `${styles.rightMenuPopOut}` : `${styles.rightMenuPopOutHidden}`}>                                 
-                    <ul className={hoverTwo ? `${styles.popOutListActive}` : `${styles.popOutListHidden}`} >
-                        <li className={styles.popOutList}>
-                          <Link  onClick={handleExit} to="/erbium" className={styles.popOutLink}>erbium records.</Link>
-                        </li>
-                        <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
-                        </li>
-                        {/* <li className={styles.popOutList}>
+            isSideNavOpen &&
+            <div className={hoverTwo ? `${styles.rightMenuPopOut}` : `${styles.rightMenuPopOutHidden}`}>
+              <ul className={hoverTwo ? `${styles.popOutListActive}` : `${styles.popOutListHidden}`} >
+                <li className={styles.popOutList}>
+                  <Link onClick={handleExit} to="/erbium" className={styles.popOutLink}>erbium records.</Link>
+                </li>
+                <li className={styles.popOutList}>
+                  <Link onClick={handleExit} to="/cutabove" className={styles.popOutLink}>cut above barbers.</Link>
+                </li>
+                <li className={styles.popOutList}>
+                  <Link onClick={handleExit} to="/brewdog" className={styles.popOutLink}>brewdog api.</Link>
+                </li>
+                {/* <li className={styles.popOutList}>
                           <Link  onClick={handleExit} to="/pokeapi" className={styles.popOutLink}>poke api.</Link>
                         </li> */}
-                        <li className={styles.popOutList}>
-                          <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
-                        </li>
-                    </ul>   
-              </div>
-          }  
+                <li className={styles.popOutList}>
+                  <Link onClick={handleExit} to="/calculator" className={styles.popOutLink}>js calculator.</Link>
+                </li>
+              </ul>
+            </div>
+          }
         </div>
       </div>
-      <Outlet/>
+      <Outlet />
     </div>
-    
+
   )
 }
 

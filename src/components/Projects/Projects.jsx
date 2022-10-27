@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from "./Projects.module.scss"
 import Card from "../Card/Card";
-import {Outlet, Link} from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import SideNav from '../SideNav/SideNav';
 import Logo from '../Logo';
 // import { Row, Col, Container, Card } from 'react-bootstrap';
@@ -15,26 +15,30 @@ export const Projects = (props) => {
 
   return (
     <>
-    <Logo></Logo>
+      <Logo></Logo>
       <div className={styles.wrapper} >
         <div className={styles.projectsContainer}>
           <ul>
             <li>
-              erbium records.        
+              erbium records.
               <Link to="/erbium">View</Link>
             </li>
             <li>
-              poke api.        
+              cut above.
+              <Link to="/cutabove">View</Link>
+            </li>
+            <li>
+              poke api.
               <Link to="/pokeapi">View</Link>
             </li>
             <li>
-              brewdog api.        
+              brewdog api.
               <Link to="/brewdog">View</Link>
             </li>
             <li>
-              calculator.       
+              calculator.
               <Link to="/calculator">View</Link>
-            </li> 
+            </li>
           </ul>
         </div>
         {/* <div className={styles.sideNavBackground}>
@@ -42,17 +46,17 @@ export const Projects = (props) => {
         </div> */}
       </div>
       <div className={styles.sideNavBackgroundActive}>
-      <SideNav></SideNav>
+        <SideNav></SideNav>
       </div>
-      <Outlet/>
+      <Outlet />
     </>
   )
 }
 
 export default Projects;
 
-// change the navbar when in mobile mode to handleClick in different way 
-// make flippable cards for the projects page, one side with title, the other side with view button 
-// change design of morse translator 
-// add in moving div with images of whats been used 
+// change the navbar when in mobile mode to handleClick in different way
+// make flippable cards for the projects page, one side with title, the other side with view button
+// change design of morse translator
+// add in moving div with images of whats been used
 // add back arrow to pages 

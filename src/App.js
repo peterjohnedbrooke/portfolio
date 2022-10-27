@@ -12,6 +12,7 @@ import KnowWaste from "./components/KnowWaste/KnowWaste";
 import Morse from "./components/Morse/Morse";
 import KnowWastePage from "./components/KnowWastePage";
 import Erbium from "./components/Erbium/Erbium";
+import CutAbove from "./components/CutAbove";
 
 const App = () => {
   // window add event listener, if projects component is visible then reset
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/" element={<NavBar />}>
             <Route index element={<Landing />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="cutabove" element={<CutAbove />} />
             <Route path="/pokeapi" element={<Poke />} />
             <Route path="/erbium" element={<Erbium />} />
             <Route path="/calculator" element={<Calculator />} />
