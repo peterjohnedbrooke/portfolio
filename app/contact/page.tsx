@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const contactInfo = [
   { label: 'Based in', value: 'United Kingdom' },
   { label: 'Available for', value: 'Freelance & Contract' },
-  { label: 'Typical rate', value: '£450–£550/day' },
+  { label: 'Typical rate', value: '£175–£350/day' },
   { label: 'Response time', value: 'Within 24 hours' },
 ]
 
