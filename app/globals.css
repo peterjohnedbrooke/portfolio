@@ -1,26 +1,368 @@
 @import "tailwindcss";
 
+/* ── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark mode (default) */
+  --bg-primary:    #09090b;
+  --bg-secondary:  #111118;
+  --bg-elevated:   #1a1a24;
+  --border-color:  #27272a;
+  --accent:        #6366f1;
+  --accent-hover:  #818cf8;
+  --accent-glow:   rgba(99, 102, 241, 0.25);
+  --accent-dark:   #4338ca;
+  --text-primary:  #fafafa;
+  --text-muted:    #a1a1aa;
+  --text-subtle:   #52525b;
+  --btn-drop-1:    rgba(0, 0, 0, 0.5);
+  --btn-drop-2:    rgba(0, 0, 0, 0.35);
+  --btn-rail:      rgba(255, 255, 255, 0.07);
+  /* Fonts — set directly via next/font variable names in layout.tsx */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="light"] {
+  --bg-primary:    #ffffff;
+  --bg-secondary:  #f4f4f5;
+  --bg-elevated:   #e4e4e7;
+  --border-color:  #d4d4d8;
+  --accent:        #4f46e5;
+  --accent-hover:  #6366f1;
+  --accent-glow:   rgba(79, 70, 229, 0.2);
+  --accent-dark:   #3730a3;
+  --text-primary:  #09090b;
+  --text-muted:    #52525b;
+  --text-subtle:   #a1a1aa;
+  --btn-drop-1:    rgba(45, 35, 66, 0.4);
+  --btn-drop-2:    rgba(45, 35, 66, 0.3);
+  --btn-rail:      #D6D6E7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 300ms ease, color 300ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Skip to content (WCAG 2.4.1) ─────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: top 200ms ease;
+}
+.skip-link:focus { top: 0; }
+
+/* ── Focus visible (WCAG 2.4.7 — min 3:1 contrast) ────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Buttons — floating elevation (Button 30 / Algolia style) ──────────── */
+.key-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease,
+    background-color 150ms ease;
+
+  box-shadow:
+    var(--btn-drop-1) 0 2px 4px,
+    var(--btn-drop-2) 0 7px 13px -3px,
+    var(--btn-rail) 0 -3px 0 inset;
+}
+
+.key-btn:hover:not(:disabled) {
+  box-shadow:
+    var(--btn-drop-1) 0 4px 8px,
+    var(--btn-drop-2) 0 7px 13px -3px,
+    var(--btn-rail) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.key-btn:active:not(:disabled) {
+  box-shadow: var(--btn-rail) 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.key-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Accent variant */
+.key-btn--accent {
+  background: var(--accent);
+  color: #fff;
+  box-shadow:
+    rgba(67, 56, 202, 0.5) 0 2px 4px,
+    rgba(67, 56, 202, 0.4) 0 7px 13px -3px,
+    rgba(129, 140, 248, 0.2) 0 -3px 0 inset;
+}
+
+.key-btn--accent:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow:
+    rgba(67, 56, 202, 0.5) 0 4px 8px,
+    rgba(67, 56, 202, 0.4) 0 7px 13px -3px,
+    rgba(129, 140, 248, 0.2) 0 -3px 0 inset,
+    0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.key-btn--accent:active:not(:disabled) {
+  box-shadow: rgba(67, 56, 202, 0.5) 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* Ghost variant */
+.key-btn--ghost {
+  background: transparent;
+  box-shadow:
+    var(--btn-drop-1) 0 2px 4px,
+    var(--btn-drop-2) 0 7px 13px -3px,
+    var(--btn-rail) 0 -3px 0 inset;
+}
+
+/* ── Skill badge keys ──────────────────────────────────────────────────── */
+.skill-key {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  box-shadow:
+    var(--btn-drop-1) 0 1px 3px,
+    var(--btn-drop-2) 0 4px 8px -2px,
+    var(--btn-rail) 0 -2px 0 inset;
+  transition: color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.skill-key:hover {
+  color: var(--accent);
+  box-shadow:
+    var(--btn-drop-1) 0 2px 5px,
+    var(--btn-drop-2) 0 4px 8px -2px,
+    var(--btn-rail) 0 -2px 0 inset,
+    0 0 8px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+/* ── Grid overlay ──────────────────────────────────────────────────────── */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.25;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+}
+
+/* ── Glassmorphism nav ─────────────────────────────────────────────────── */
+.glass {
+  background: rgba(9, 9, 11, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Gradient text ─────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card surface ──────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 32px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* ── Section label ─────────────────────────────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ── Social link hover (used in Server Component, no JS handlers) ──────── */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  text-decoration: none;
+  transition: border-color 150ms ease;
+}
+
+.social-link:hover {
+  border-color: var(--accent);
+}
+
+/* ── Form inputs ───────────────────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: #f87171;
+}
+
+.form-input[aria-invalid="true"]:focus {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Skill chips (proficiency-coloured) ───────────────────────────────── */
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.skill-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: currentColor;
+}
+
+.skill-chip--expert {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.28);
+  color: #16a34a;
+}
+
+[data-theme="dark"] .skill-chip--expert,
+:root .skill-chip--expert {
+  color: #22c55e;
+}
+
+[data-theme="light"] .skill-chip--expert {
+  color: #15803d;
+}
+
+.skill-chip--proficient {
+  background: var(--accent-glow);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: var(--accent);
+}
+
+.skill-chip--familiar {
+  background: rgba(113, 113, 122, 0.08);
+  border-color: rgba(113, 113, 122, 0.2);
+  color: var(--text-muted);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
+
+/* ── Reduce motion (WCAG 2.3.3) ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
