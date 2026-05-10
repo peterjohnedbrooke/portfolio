@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import Hamburger from 'hamburger-react'
 import ThemeToggle from '@/components/ui/ThemeToggle'
 
 const navLinks = [
@@ -13,6 +12,66 @@ const navLinks = [
   { href: '/skills', label: 'Skills' },
   { href: '/contact', label: 'Contact' },
 ]
+
+function HamburgerButton({
+  open,
+  onToggle,
+}: {
+  open: boolean
+  onToggle: () => void
+}) {
+  return (
+    <button
+      onClick={onToggle}
+      aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+      aria-expanded={open}
+      aria-controls="mobile-menu"
+      className="key-btn key-btn--ghost"
+      style={{ padding: '0.375rem 0.5rem' }}
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 16 16"
+        fill="none"
+        aria-hidden="true"
+        style={{ display: 'block' }}
+      >
+        {/* Top line → rotates to form top arm of X */}
+        <rect
+          x="1" y="2.5" width="14" height="2" rx="1"
+          fill="var(--text-primary)"
+          style={{
+            transformBox: 'fill-box',
+            transformOrigin: 'center',
+            transition: 'transform 0.2s ease',
+            transform: open ? 'translateY(4.5px) rotate(45deg)' : 'none',
+          }}
+        />
+        {/* Middle line → fades out */}
+        <rect
+          x="1" y="7" width="14" height="2" rx="1"
+          fill="var(--text-primary)"
+          style={{
+            transition: 'opacity 0.2s ease',
+            opacity: open ? 0 : 1,
+          }}
+        />
+        {/* Bottom line → rotates to form bottom arm of X */}
+        <rect
+          x="1" y="11.5" width="14" height="2" rx="1"
+          fill="var(--text-primary)"
+          style={{
+            transformBox: 'fill-box',
+            transformOrigin: 'center',
+            transition: 'transform 0.2s ease',
+            transform: open ? 'translateY(-4.5px) rotate(-45deg)' : 'none',
+          }}
+        />
+      </svg>
+    </button>
+  )
+}
 
 export default function Nav() {
   const pathname = usePathname()
@@ -25,12 +84,10 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false)
   }, [pathname])
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -40,7 +97,7 @@ export default function Nav() {
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${
           scrolled ? 'glass border-b' : ''
         }`}
         style={{ borderColor: scrolled ? 'var(--border-color)' : 'transparent' }}
@@ -54,7 +111,7 @@ export default function Nav() {
             href="/"
             aria-label="Home"
             className="key-btn key-btn--ghost text-sm font-semibold tracking-tight"
-            style={{ 
+            style={{
               padding: '0.375rem 0.875rem',
               fontFamily: 'var(--font-body), system-ui, sans-serif',
             }}
@@ -62,7 +119,7 @@ export default function Nav() {
             {'<pje />'}
           </Link>
 
-          {/* Desktop nav */}
+          {/* Desktop: nav links + actions */}
           <ul className="hidden md:flex items-center gap-1" role="list">
             {navLinks.map(({ href, label }) => {
               const active = pathname === href
@@ -85,35 +142,20 @@ export default function Nav() {
             })}
           </ul>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-
-            {/* Hire me CTA (desktop) */}
             <Link
               href="/contact"
-              className="key-btn key-btn--accent hidden md:inline-flex text-xs"
+              className="key-btn key-btn--accent text-xs"
               style={{ padding: '0.375rem 0.875rem' }}
             >
               Hire Me
             </Link>
+          </div>
 
-            {/* Mobile hamburger */}
-            <div
-              className="!flex md:!hidden"
-              style={{ padding: '10px' }}
-              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-menu"
-            >
-              <Hamburger
-                toggled={mobileOpen}
-                toggle={setMobileOpen}
-                size={24}
-                color="var(--text-primary)"
-                rounded
-                label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              />
-            </div>
+          {/* Mobile: hamburger only */}
+          <div className="flex md:hidden">
+            <HamburgerButton open={mobileOpen} onToggle={() => setMobileOpen(v => !v)} />
           </div>
         </nav>
       </header>
@@ -141,23 +183,11 @@ export default function Nav() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden flex flex-col"
-              style={{ background: 'var(--bg-secondary)', borderLeft: '1px solid var(--border-color)' }}
+              className="fixed top-0 left-0 right-0 bottom-0 z-50 md:hidden flex flex-col"
+              style={{ background: 'var(--bg-secondary)' }}
             >
-              <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
-                <span className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>Menu</span>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  aria-label="Close menu"
-                  className="key-btn key-btn--ghost"
-                  style={{ padding: '0.375rem 0.5rem' }}
-                >
-                  <span aria-hidden="true">✕</span>
-                </button>
-              </div>
-
               <nav aria-label="Mobile navigation">
-                <ul className="flex flex-col p-6 gap-3" role="list">
+                <ul className="flex flex-col p-6 pt-20 gap-3" role="list">
                   {navLinks.map(({ href, label }) => {
                     const active = pathname === href
                     return (

@@ -64,7 +64,7 @@ export default function Hero() {
           className="flex flex-col items-center gap-6"
         >
           {/* Status badge */}
-          {/* <motion.div variants={item} transition={itemTransition}>
+          <motion.div variants={item} transition={itemTransition}>
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium border"
               style={{
@@ -86,7 +86,7 @@ export default function Hero() {
               />
               Available for freelance work
             </span>
-          </motion.div> */}
+          </motion.div>
 
           {/* Name */}
           <motion.h1
@@ -126,7 +126,7 @@ export default function Hero() {
             aria-label="Core technologies"
             role="list"
           >
-            {['React', 'TypeScript', 'Next.js', 'Node.js'].map((tech) => (
+            {['React', 'TypeScript', 'Next.js', 'Node.js', 'Claude AI'].map((tech) => (
               <li key={tech}>
                 <span className="skill-key">{tech}</span>
               </li>

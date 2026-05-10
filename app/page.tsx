@@ -33,7 +33,7 @@ export default function HomePage() {
               { value: '7+',       label: 'Years experience'     },
               { value: '20+',      label: 'Projects delivered'   },
               { value: 'WCAG 2.2', label: 'Accessibility expert' },
-              { value: 'UK-based', label: 'Available now'        },
+              { value: 'Remote',   label: 'Available now'        },
             ] as const).map(({ value, label }) => (
               <li
                 key={label}

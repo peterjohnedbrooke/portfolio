@@ -85,6 +85,16 @@ const categories: Category[] = [
       { name: 'Contensis CMS', level: 'Expert', years: 4 },
     ],
   },
+  {
+    heading: 'AI & Workflow',
+    description: 'Tools that accelerate design implementation, prototyping, and development.',
+    skills: [
+      { name: 'GitHub Copilot', level: 'Proficient', years: 2 },
+      { name: 'Claude Code', level: 'Proficient', years: 1 },
+      { name: 'Claude (chat)', level: 'Proficient', years: 1 },
+      { name: 'Figma (design handoff)', level: 'Proficient', years: 3 },
+    ],
+  },
 ]
 
 const levelChipClass: Record<Skill['level'], string> = {
