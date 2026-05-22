@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter J Edbrooke — Senior Frontend Developer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 10pt;
+      color: #374151;
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 14mm 16mm;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #0d9488;
+    }
+
+    .header h1 {
+      font-size: 26pt;
+      font-weight: 700;
+      color: #1e293b;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .header .role {
+      font-size: 13pt;
+      color: #0d9488;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .header .contact {
+      font-size: 8.5pt;
+      color: #6b7280;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+    }
+
+    .header .contact a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .contact-sep {
+      color: #d1d5db;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding-bottom: 4px;
+      border-bottom: 2.5px solid #0d9488;
+      margin-bottom: 10px;
+    }
+
+    /* ── SUMMARY ── */
+    .summary p {
+      font-size: 9.5pt;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 4px 12px;
+    }
+
+    .skill-label {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1e293b;
+      padding: 2px 0;
+    }
+
+    .skill-value {
+      font-size: 9pt;
+      color: #374151;
+      padding: 2px 0;
+    }
+
+    /* ── JOBS ── */
+    .job {
+      margin-bottom: 12px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .job-title {
+      font-size: 10pt;
+      color: #1e293b;
+    }
+
+    .job-title strong {
+      font-weight: 700;
+    }
+
+    .job-dates {
+      font-size: 8.5pt;
+      color: #6b7280;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .job-intro {
+      font-size: 9pt;
+      color: #374151;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .job ul {
+      margin-left: 14px;
+      list-style: disc;
+    }
+
+    .job ul li {
+      font-size: 9pt;
+      color: #374151;
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+
+    .job ul li strong {
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    /* ── CONDENSED ENTRY ── */
+    .condensed {
+      font-size: 8.5pt;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .condensed strong {
+      color: #374151;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-entry .edu-left {
+      font-size: 9.5pt;
+      color: #1e293b;
+    }
+
+    .edu-entry .edu-left strong {
+      font-weight: 700;
+    }
+
+    .edu-date {
+      font-size: 8.5pt;
+      color: #6b7280;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 8pt;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; }
+      .page { padding: 10mm 14mm; }
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>PETER J EDBROOKE</h1>
+      <p class="role">Senior Frontend Developer</p>
+      <div class="contact">
+        <span>Salisbury, UK</span>
+        <span class="contact-sep">·</span>
+        <span>07496 861349</span>
+        <span class="contact-sep">·</span>
+        <a href="mailto:peter.john.edbrooke@gmail.com">peter.john.edbrooke@gmail.com</a>
+        <span class="contact-sep">·</span>
+        <a href="#">[Portfolio URL]</a>
+        <span class="contact-sep">·</span>
+        <a href="#">[GitHub URL]</a>
+        <span class="contact-sep">·</span>
+        <a href="#">[LinkedIn URL]</a>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="section summary">
+      <h2 class="section-title">Professional Summary</h2>
+      <p>
+        Senior Frontend Developer with 7+ years of experience building accessible, high-performance React applications at scale. Currently leading frontend development at Zengenti on large-scale platforms serving UK universities and public sector organisations with hundreds of thousands of users. Specialist in React, TypeScript, and Redux, with a strong focus on component-driven architecture, WCAG 2.2 AA accessibility, and clean, maintainable code. Experienced working in cross-functional teams — translating Figma designs into pixel-accurate, production-ready components and contributing to frontend architecture decisions alongside product and backend engineers.
+      </p>
+    </section>
+
+    <!-- CORE SKILLS -->
+    <section class="section">
+      <h2 class="section-title">Core Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-label">Frontend</span>
+        <span class="skill-value">React, TypeScript, JavaScript (ES2024), HTML5, CSS3, WCAG 2.2 AA</span>
+
+        <span class="skill-label">Frameworks</span>
+        <span class="skill-value">Next.js (App Router), Node.js, Express, Vite</span>
+
+        <span class="skill-label">State &amp; Data</span>
+        <span class="skill-value">Redux Toolkit, REST APIs, GraphQL</span>
+
+        <span class="skill-label">Styling</span>
+        <span class="skill-value">Tailwind CSS, Styled Components, CSS Modules, Framer Motion</span>
+
+        <span class="skill-label">Tooling</span>
+        <span class="skill-value">Git, GitHub Actions, Vercel, Storybook</span>
+
+        <span class="skill-label">Design</span>
+        <span class="skill-value">Figma — design handoff, component implementation from spec</span>
+
+        <span class="skill-label">AI Tools</span>
+        <span class="skill-value">GitHub Copilot, Claude Code</span>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <!-- Zengenti -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title"><strong>Zengenti</strong> &nbsp;·&nbsp; Senior Frontend Developer</span>
+          <span class="job-dates">Jan 2023 – Present</span>
+        </div>
+        <p class="job-intro">
+          Leading frontend development on large-scale React/TypeScript applications for high-profile UK clients. Working within cross-functional teams alongside product managers, designers, and backend engineers to deliver accessible, high-performance web platforms.
+        </p>
+        <ul>
+          <li><strong>University of Worcester</strong> — Delivered key sections of the university's public-facing website including homepage, course pages, and events, across 1,000+ pages. Built a bespoke Open Day Programmes frontend featuring QR code scanning and personalised attendee experiences, with full WCAG 2.2 AA compliance throughout.</li>
+          <li><strong>BCP Council</strong> — Complete redesign for one of the UK's largest unitary authorities (Bournemouth, Christchurch &amp; Poole), building GOV.UK Design System-aligned public services for hundreds of thousands of residents.</li>
+          <li><strong>University of Sunderland</strong> — Led component architecture decisions, established frontend coding standards, mentored junior developers, and built Node.js CSV pipelines for large-scale content migration.</li>
+          <li><strong>St Mary's University</strong> — Redeveloped the university's digital presence with a modern, accessible component library focused on prospective student recruitment.</li>
+          <li><strong>Contensis CMS</strong> — Ongoing content modelling, Management API and Delivery API integration, and data mapping across React frontends for multiple client projects.</li>
+        </ul>
+      </div>
+
+      <!-- NoMuda -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title"><strong>NoMuda</strong> &nbsp;·&nbsp; Full Stack Developer</span>
+          <span class="job-dates">May 2022 – Sept 2022</span>
+        </div>
+        <p class="job-intro">
+          Full-stack development in C#, .NET Core, AngularJS, and SQL Server within an MVC architecture. Focused on bug fixes, performance optimisation, and frontend work — strengthened understanding of full-stack patterns and working effectively within established codebases.
+        </p>
+      </div>
+
+      <!-- Nology -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title"><strong>Nology</strong> &nbsp;·&nbsp; Web Developer Bootcamp</span>
+          <span class="job-dates">Dec 2021 – Feb 2022</span>
+        </div>
+        <p class="job-intro">
+          Intensive training covering HTML, CSS, JavaScript, React, Node.js, Cypress, and Firebase. Foundation for transitioning into professional software development.
+        </p>
+      </div>
+
+      <!-- Earlier career -->
+      <p class="condensed">
+        <strong>Earlier career:</strong> Landscape Designer, Glamorgan Gardens (2019–2021) &nbsp;·&nbsp; Manager, The Office Bar &amp; Members Club (2018–2019)
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-entry">
+        <span class="edu-left"><strong>UWE Bristol</strong> &nbsp;·&nbsp; BA (Hons) Media &amp; Journalism</span>
+        <span class="edu-date">2015</span>
+      </div>
+    </section>
+
+    <p class="footer">References available on request</p>
+
+  </div>
+</body>
+</html>

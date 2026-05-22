@@ -38,15 +38,15 @@ const categories: Category[] = [
     skills: [
       { name: 'Next.js (App Router)', level: 'Proficient', years: 2 },
       { name: 'Node.js', level: 'Proficient', years: 5 },
-      { name: 'Express', level: 'Proficient', years: 4 },
-      { name: 'Vite', level: 'Proficient', years: 2 },
+      { name: 'Express', level: 'Expert', years: 4 },
+      { name: 'Vite', level: 'Familiar', years: 2 },
     ],
   },
   {
     heading: 'Styling',
     description: 'How I make things look good.',
     skills: [
-      { name: 'Tailwind CSS', level: 'Proficient', years: 2 },
+      { name: 'Tailwind CSS', level: 'Familiar', years: 2 },
       { name: 'Styled Components', level: 'Expert', years: 4 },
       { name: 'CSS Modules', level: 'Expert', years: 5 },
       { name: 'Framer Motion', level: 'Proficient', years: 1 },
@@ -57,9 +57,9 @@ const categories: Category[] = [
     heading: 'State & Data',
     description: 'Managing complexity at scale.',
     skills: [
-      { name: 'Redux Toolkit', level: 'Expert', years: 4 },
-      { name: 'Zustand', level: 'Proficient', years: 1 },
-      { name: 'TanStack Query', level: 'Proficient', years: 1 },
+      { name: 'Redux Toolkit', level: 'Proficient', years: 2 },
+      { name: 'Zustand', level: 'Familiar', years: 1 },
+      { name: 'TanStack Query', level: 'Familiar', years: 1 },
       { name: 'REST APIs', level: 'Expert', years: 6 },
       { name: 'GraphQL', level: 'Familiar' },
     ],
@@ -68,10 +68,10 @@ const categories: Category[] = [
     heading: 'Testing & Quality',
     description: 'Confidence through coverage.',
     skills: [
-      { name: 'Vitest', level: 'Proficient', years: 2 },
-      { name: 'React Testing Library', level: 'Proficient', years: 3 },
+      { name: 'Vitest', level: 'Familiar', years: 2 },
+      { name: 'React Testing Library', level: 'Familiar', years: 3 },
       { name: 'Playwright', level: 'Familiar' },
-      { name: 'Storybook', level: 'Proficient', years: 2 },
+      { name: 'Storybook', level: 'Expert', years: 2 },
     ],
   },
   {
@@ -89,10 +89,10 @@ const categories: Category[] = [
     heading: 'AI & Workflow',
     description: 'Tools that accelerate design implementation, prototyping, and development.',
     skills: [
-      { name: 'GitHub Copilot', level: 'Proficient', years: 2 },
-      { name: 'Claude Code', level: 'Proficient', years: 1 },
-      { name: 'Claude (chat)', level: 'Proficient', years: 1 },
-      { name: 'Figma (design handoff)', level: 'Proficient', years: 3 },
+      { name: 'GitHub Copilot', level: 'Expert', years: 2 },
+      { name: 'Claude Code', level: 'Expert', years: 1 },
+      { name: 'Claude (chat)', level: 'Expert', years: 1 },
+      { name: 'Figma (design handoff)', level: 'Expert', years: 3 },
     ],
   },
 ]
